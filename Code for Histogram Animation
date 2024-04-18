@@ -1,0 +1,48 @@
+import functools  # Importing the functools module for creating partial functions
+
+import matplotlib.pyplot as plt  # Importing the matplotlib library for plotting
+import numpy as np  # Importing the numpy library for numerical computing
+
+import matplotlib.animation as animation  # Importing the animation module from matplotlib
+
+# Setting up a random number generator with a fixed state for reproducibility.
+rng = np.random.default_rng(seed=19680801)  # Creating a random number generator with a fixed seed for reproducibility
+
+# Fixing bin edges.
+HIST_BINS = np.linspace(-4, 4, 100)  # Defining bin edges for histogram
+
+# Generating random data using a standard normal distribution
+data = rng.standard_normal(1000)  # Generating 1000 random numbers from a standard normal distribution
+
+# Calculating histogram counts and bin edges using numpy
+n, _ = np.histogram(data, HIST_BINS)  # Calculating histogram counts and bin edges
+
+# Function to animate the histogram
+def animate(frame_number, bar_container):
+    # Simulating new data coming in by generating new random data
+    data = rng.standard_normal(1000)  # Generating new random data
+    n, _ = np.histogram(data, HIST_BINS)  # Calculating histogram counts for new data
+    
+    # Looping through histogram patches to update heights based on new counts
+    for count, rect in zip(n, bar_container.patches):
+        rect.set_height(count)  # Setting the height of each patch to the histogram count
+
+    return bar_container.patches  # Returning the updated patches
+
+# Output generated via `matplotlib.animation.Animation.to_jshtml`.
+
+fig, ax = plt.subplots()  # Creating a figure and axis for plotting
+
+# Creating a histogram plot using matplotlib's hist function
+_, _, bar_container = ax.hist(data, HIST_BINS, lw=1,  # Creating a histogram plot
+                              ec="yellow", fc="green", alpha=0.5)
+
+ax.set_ylim(top=55)  # Setting the y-axis limit to ensure all data is visible
+
+# Creating a partial function for animation to pass additional arguments to the animate function
+anim = functools.partial(animate, bar_container=bar_container)
+
+# Creating the animation using FuncAnimation from matplotlib.animation
+ani = animation.FuncAnimation(fig, anim, 50, repeat=False, blit=True)  # Creating the animation with 50 frames
+
+plt.show()  # Displaying the animation
