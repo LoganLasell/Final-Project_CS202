@@ -1,0 +1,28 @@
+###my artistry activity 
+#Artistry activity 1
+import matplotlib.pyplot as plt
+plt. suptitle( 'Shohei Ohtanis Extra-Base Hits Só Fair this 2024 Season*')
+plt. title('*As of 04/16/2024 2:00p',
+             fontsize = 10)
+x= ["Doubles", "Triples", "Home Runs"] 
+y = (10, 1, 4) 
+plt.bar(x, y) 
+##One way to change bar color:
+#color - ['gray', "blue' red"] 
+#color - ['#ASACAF', '#005A9C', '#EF3E42'] #color hex codes also work too
+#plt.bar(x, y, color = color)
+
+#Another way to change bar color
+plt.bar(x, y, color = ['red', 'blue', 'silver'])
+
+def addlabels(x,y): 
+    for i in range(len(x)): 
+        plt.text(i, y[i], y[i], ha= 'center')
+addlabels(x, y)
+
+##rotate x 
+plt.xticks(rotation=30)
+
+plt.show()
+
+
