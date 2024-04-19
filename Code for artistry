@@ -25,4 +25,37 @@ plt.xticks(rotation=30)
 
 plt.show()
 
+##activity 2 NOT COMPLETE! missing: legend + bar numbers
+##artistry activity 2
+##stacked bar
+import matplotlib.pyplot as plt
+plt. suptitle( 'Shohei Ohtanis Extra-Base Hits Só Fair this 2024 Season*')
+plt. title('*As of 04/16/2024 2:00pm',
+             fontsize = 10)
+
+def addlabels(x,y): 
+    for i in range(len(x)): 
+        plt.text(i, ha= 'center')
+        
+#barwidth
+width= 0.25
+
+##set width with tick marks
+ 
+
+#set values for bar
+y1 = (12) 
+y2=(1)
+y3=(4)
+plt.bar(x,y, facecolor='w')
+
+# plot bars in stack manner
+#contains width*
+plt.bar(x, y2, color='silver', width=0.3)
+plt.bar(x, y3, bottom=y2, color='blue', width=0.3)
+plt.bar(x, y1, bottom= y3, color= 'red', width=0.3)
+
+
+plt.show()
+
 
