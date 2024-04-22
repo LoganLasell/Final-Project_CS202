@@ -1,0 +1,13 @@
+###Pie Chart 
+
+#Data
+extrabasehit = ["Doubles", "Triples", "Home Runs"]
+values = [10, 1, 4]
+colors = ["dodgerblue", "skyblue", "lightsteelblue"]
+
+#Pie chart
+fig, ax = plt.subplots()
+ax.pie(values, labels = extrabasehit, colors = colors, autopct = '%1.0f%%', pctdistance = 0.75)
+plt.title("Shohei Ohtani's Extra-Base Hits This 2024 Season\n As of 04/16/2024 2:00pm") # backslash n or "\n" is code used to make text on next line
+
+plt.show()
