@@ -1,61 +1,35 @@
-###my artistry activity 
-#Artistry activity 1
 import matplotlib.pyplot as plt
-plt. suptitle( 'Shohei Ohtanis Extra-Base Hits Só Fair this 2024 Season*')
-plt. title('*As of 04/16/2024 2:00p',
-             fontsize = 10)
-x= ["Doubles", "Triples", "Home Runs"] 
-y = (10, 1, 4) 
-plt.bar(x, y) 
+
+# Setting the title and subtitle of the plot
+plt.suptitle('Shohei Ohtani\'s Extra-Base Hits So Far this 2024 Season')
+plt.title('*As of 04/16/2024 2:00pm', fontsize=10)
+
+# Defining the data
+x = ["Doubles", "Triples", "Home Runs"]
+y = (10, 1, 4)
+
+# Creating a bar plot
+plt.bar(x, y)
+
 ##One way to change bar color:
-#color - ['gray', "blue' red"] 
-#color - ['#ASACAF', '#005A9C', '#EF3E42'] #color hex codes also work too
-#plt.bar(x, y, color = color)
+# color - ['gray', "blue', 'red']
+# color - ['#ASACAF', '#005A9C', '#EF3E42'] #color hex codes also work too
+# plt.bar(x, y, color=color)
 
-#Another way to change bar color
-plt.bar(x, y, color = ['red', 'blue', 'silver'])
+# Another way to change bar color
+plt.bar(x, y, color=['red', 'blue', 'silver'])
 
-def addlabels(x,y): 
-    for i in range(len(x)): 
-        plt.text(i, y[i], y[i], ha= 'center')
+# Function to add labels to the bars
+def addlabels(x, y):
+    for i in range(len(x)):
+        plt.text(i, y[i], y[i], ha='center')  # Adding the count as labels on top of each bar
+
 addlabels(x, y)
 
-##rotate x 
+# Rotating x-axis labels for better readability
 plt.xticks(rotation=30)
 
-plt.show()
-
-##activity 2 NOT COMPLETE! missing: legend + bar numbers
-##artistry activity 2
-##stacked bar
-import matplotlib.pyplot as plt
-plt. suptitle( 'Shohei Ohtanis Extra-Base Hits Só Fair this 2024 Season*')
-plt. title('*As of 04/16/2024 2:00pm',
-             fontsize = 10)
-
-def addlabels(x,y): 
-    for i in range(len(x)): 
-        plt.text(i, ha= 'center')
-        
-#barwidth
-width= 0.25
-
-##set width with tick marks
- 
-
-#set values for bar
-y1 = (12) 
-y2=(1)
-y3=(4)
-plt.bar(x,y, facecolor='w')
-
-# plot bars in stack manner
-#contains width*
-plt.bar(x, y2, color='silver', width=0.3)
-plt.bar(x, y3, bottom=y2, color='blue', width=0.3)
-plt.bar(x, y1, bottom= y3, color= 'red', width=0.3)
-
-
+# Displaying the plot
 plt.show()
 
 
