@@ -1,0 +1,28 @@
+##Extended Features of bar graph
+#Title and Changing Title Size
+plt.title("Shohei Ohtani's Extra-Base Hits This 2024 Season\n As of 04/16/2024 2:00pm", fontsize = 16)
+
+#Data
+x = ["Doubles", "Triples", "Home Runs"]
+y = [10, 1, 4]
+
+#plt.bar(x, y)
+
+#Changing Bar Width and Color 
+plt.bar(x, y, 
+        width = 0.5,
+        color = ["dodgerblue", "skyblue", "lightsteelblue"], 
+        edgecolor = "black", 
+        lw = 0.5) #lw: line width
+
+#Add Labels Above Bar
+def addlabels(x,y):
+    for i in range(len(x)):
+        plt.text(i, y[i], y[i], ha = "center")
+addlabels(x, y)
+
+#Rotate X-Axis Text
+plt.xticks(rotation=30)
+
+plt.show()
+
