@@ -1,3 +1,4 @@
+#get data from https://ourworldindata.org/crop-yields then download and upload to Jupyter notebook. Make sure name is crop_yields.csv
 import pandas as pd
 import matplotlib.pyplot as plt
 
