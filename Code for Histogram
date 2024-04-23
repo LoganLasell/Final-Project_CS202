@@ -20,5 +20,6 @@ plt.xlabel('Crop Yield (tons per hectare)')
 plt.ylabel('Frequency')
 plt.title('Histogram of Crop Yields (1980-2022)')
 
-# Display the plot
+# Display the plot and make it interactive
+%matplotlib notebook
 plt.show()
