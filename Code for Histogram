@@ -1,0 +1,23 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Read data from CSV file
+file_path = 'crop_yields.csv'  # Replace 'crop_yields.csv' with the actual file path
+crop_yields = pd.read_csv(file_path)
+
+# Filter data for years 1980 to 2022
+crop_yields_filtered = crop_yields[(crop_yields['year'] >= 1980) & (crop_yields['year'] <= 2022)]
+
+# Extract crop yield data from the filtered DataFrame
+crop_yield_data = crop_yields_filtered['wheat_yield']
+
+# Create histogram with 10 bins
+plt.hist(crop_yield_data, bins=10, edgecolor='black')
+
+# Add labels and title
+plt.xlabel('Crop Yield (tons per hectare)')
+plt.ylabel('Frequency')
+plt.title('Histogram of Crop Yields (1980-2022)')
+
+# Display the plot
+plt.show()
